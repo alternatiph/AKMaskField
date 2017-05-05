@@ -229,12 +229,12 @@ open class AKMaskField: UITextField {
   //  MARK: - Accessing the Delegate
   
   /// The receiver’s delegate.
-  weak var maskDelegate: AKMaskFieldDelegate?
+  open weak var maskDelegate: AKMaskFieldDelegate?
   
   //  MARK: - Getting the Mask Field status
   
   /// Returns the current status of the mask field. The value of the property is a constant. 
-  final var maskStatus: AKMaskFieldStatus {
+  public final var maskStatus: AKMaskFieldStatus {
     
     let maskBlocksChars = maskBlocks.flatMap { $0.chars }
     let completedChars  = maskBlocksChars.filter { $0.status == .complete }
@@ -658,7 +658,7 @@ extension AKMaskField: UITextFieldDelegate {
 
 //  MARK: - AKMaskFieldDelegate
 
-protocol AKMaskFieldDelegate: class {
+public protocol AKMaskFieldDelegate: class {
   
   /// Asks the delegate if editing should begin in the specified mask field.
   ///
